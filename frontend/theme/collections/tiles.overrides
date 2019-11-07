@@ -1,3 +1,12 @@
+
+/*---  Theme colors  ---*/
+
+@lightGreen       : #769e2e;
+@darkGreen        : #225511;
+@darkerGreen      : #003311;
+@darkBrown        : #554433;
+@darkOrange       : #cc4400;
+
 // General
 .tile-container {
   padding: 10px;

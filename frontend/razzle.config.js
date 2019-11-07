@@ -58,6 +58,8 @@ module.exports = {
     //   }),
     // ];
 
+      // "@plone/volto/(.*)$": "<rootDir>/volto/src/$1",
+ 
     return vc;
   },
 };
