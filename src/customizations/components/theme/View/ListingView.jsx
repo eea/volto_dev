@@ -16,12 +16,12 @@ import { defineMessages, injectIntl } from 'react-intl';
 import { Container, Image, Grid } from 'semantic-ui-react';
 import { map } from 'lodash';
 
-import { settings, tiles } from '~/config';
+import { settings, blocks } from '~/config';
 
 import {
-  getTilesFieldname,
-  getTilesLayoutFieldname,
-  hasTilesData,
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+  hasBlocksData,
 } from '@plone/volto/helpers';
 
 const messages = defineMessages({
@@ -68,8 +68,8 @@ class ListingView extends Component {
   render() {
     const content = this.props.content;
     const intl = this.props.intl;
-    const tilesFieldname = getTilesFieldname(content);
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    const tilesFieldname = getBlocksFieldname(content);
+    const tilesLayoutFieldname = getBlocksLayoutFieldname(content);
     const localNavigation =
       (this.props.localNavigation.items &&
         this.props.localNavigation.items.filter(
@@ -80,12 +80,12 @@ class ListingView extends Component {
       <Grid columns={3} className="folderWithContent">
         <Grid.Column tablet={0} largeScreen={3} widescreen={3}></Grid.Column>
         <Grid.Column tablet={12} largeScreen={6} widescreen={6}>
-          {hasTilesData(content) ? (
+          {hasBlocksData(content) ? (
             <div id="page-document">
               <Helmet title={content.title} />
               {map(content[tilesLayoutFieldname].items, tile => {
                 const Tile =
-                  tiles.tilesConfig[
+                  blocks.tilesConfig[
                     (content[tilesFieldname]?.[tile]?.['@type'])
                   ]?.['view'] || null;
                 return Tile !== null ? (
@@ -151,12 +151,12 @@ class ListingView extends Component {
       </Grid>
     );
     if (!localNavigation.length) {
-      pageTemplate = hasTilesData(content) ? (
+      pageTemplate = hasBlocksData(content) ? (
         <div id="page-document">
           <Helmet title={content.title} />
           {map(content[tilesLayoutFieldname].items, tile => {
             const Tile =
-              tiles.tilesConfig[(content[tilesFieldname]?.[tile]?.['@type'])]?.[
+              blocks.tilesConfig[(content[tilesFieldname]?.[tile]?.['@type'])]?.[
                 'view'
               ] || null;
             return Tile !== null ? (

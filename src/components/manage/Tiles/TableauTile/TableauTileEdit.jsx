@@ -48,7 +48,7 @@ class StackedBarChart extends Component {
   }
 
   onSubmit() {
-    this.props.onChangeTile(this.props.tile, {
+    this.props.onChangeBlock(this.props.block, {
       ...this.props.data,
       tableauData: this.state.tableauData,
     });

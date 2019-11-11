@@ -4,7 +4,7 @@ import {
   settings as defaultSettings,
   views as defaultViews,
   widgets as defaultWidgets,
-  tiles as defaultTiles,
+  blocks as defaultBlocks,
 } from '@plone/volto/config';
 
 import { defineMessages } from 'react-intl';
@@ -35,8 +35,8 @@ import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
 import SliderEditButton from '~/components/manage/Slider/Portlet';
 
 // Display types
-import CountryView from '~/components/theme/CountryView/CountryView';
-import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
+// import CountryView from '~/components/theme/CountryView/CountryView';
+// import CountryPageView from '~/components/theme/CountryPageView/CountryPageView';
 import HomepageView from '~/components/theme/HomepageView/HomepageView';
 import VisualizationView from '~/components/theme/VisualizationView/View';
 
@@ -71,8 +71,8 @@ export const views = {
   ...defaultViews,
   layoutViews: {
     ...defaultViews.layoutViews,
-    full_view: CountryView,
-    country_tab_view: CountryPageView,
+    // full_view: CountryView,
+    // country_tab_view: CountryPageView,
     homepage_view: HomepageView,
     ...layoutViews,
   },
@@ -126,17 +126,19 @@ defineMessages({
   },
 });
 
-export const tiles = {
-  ...defaultTiles,
+console.log('alalalala', defaultBlocks)
 
-  groupTilesOrder: [
-    ...defaultTiles.groupTilesOrder,
+export const blocks = {
+  ...defaultBlocks,
+
+  groupBlocksOrder: [
+    ...defaultBlocks.groupBlocksOrder,
     { id: 'custom_addons', title: 'Custom addons' },
     { id: 'forests_specific', title: 'Forests Specific Tiles' },
   ],
 
-  tilesConfig: {
-    ...defaultTiles.tilesConfig,
+  blocksConfig: {
+    ...defaultBlocks.blocksConfig,
     europe_compare_tile: {
       id: 'europe_compare_tile',
       title: 'Europe Compare Tile',
@@ -183,7 +185,7 @@ export const tiles = {
       title: 'CKEditor',
       view: TextTileView,
       edit: TextTileEdit,
-      icon: defaultTiles.tilesConfig.text.icon,
+      icon: defaultBlocks.blocksConfig.text.icon,
     },
   },
 };

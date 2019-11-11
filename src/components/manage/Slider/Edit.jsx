@@ -1,5 +1,5 @@
 import Dropzone from 'react-dropzone';
-import Editor from '@plone/volto/components/manage/Tiles/Text/Edit';
+import Editor from '@plone/volto/components/manage/Blocks/Text/Edit';
 import React, { Component } from 'react';
 import clearIcon from '@plone/volto/icons/clear.svg';
 import penIcon from '@plone/volto/icons/pen.svg';

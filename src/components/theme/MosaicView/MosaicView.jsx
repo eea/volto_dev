@@ -30,9 +30,9 @@ import {
 } from 'react-mosaic-component';
 
 import {
-  getTilesFieldname,
-  getTilesLayoutFieldname,
-  // hasTilesData,
+  getBlocksFieldname,
+  getBlocksLayoutFieldname,
+  // hasBlocksData,
 } from '@plone/volto/helpers';
 
 /**
@@ -48,7 +48,7 @@ class MosaicView extends Component {
 
     let content = props.content;
     console.log('content', content);
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    const tilesLayoutFieldname = getBlocksLayoutFieldname(content);
 
     let layout = content[tilesLayoutFieldname].layout;
 
@@ -76,7 +76,7 @@ class MosaicView extends Component {
 
   renderTile(tileid) {
     const content = this.props.content;
-    const tilesFieldname = getTilesFieldname(content);
+    const tilesFieldname = getBlocksFieldname(content);
     const availableTiles = content[tilesFieldname];
     const tiletype = availableTiles[tileid]['@type'];
 
@@ -98,7 +98,7 @@ class MosaicView extends Component {
     const content = this.props.content;
     console.log('This.state in render: ', this.state);
 
-    const tilesLayoutFieldname = getTilesLayoutFieldname(content);
+    const tilesLayoutFieldname = getBlocksLayoutFieldname(content);
     const height = content[tilesLayoutFieldname].layout_height || 500;
 
     return true ? (
