@@ -3,3 +3,4 @@
 docker-compose.override.yml
 /node_modules/
 /data/
+/build/
