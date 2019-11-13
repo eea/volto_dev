@@ -22,7 +22,7 @@ import {
   // setFolderHeader,
   setFolderTabs, getParentFolderData } from '~/actions';
 
-// import { settings, tiles } from '~/config';
+// import { settings, blocks } from '~/config';
 
 // import // getBlocksFieldname,
 // // getBlocksLayoutFieldname,
@@ -141,8 +141,8 @@ class HomepageView extends Component {
 
   render() {
     // const content = this.props.content;
-    // const tilesFieldname = getBlocksFieldname(content);
-    // const tilesLayoutFieldname = getBlocksLayoutFieldname(content);
+    // const blocksFieldname = getBlocksFieldname(content);
+    // const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
 
     this.tabs = [
       { title: 'Coverage & Growth', url: '', type: 'Section' },

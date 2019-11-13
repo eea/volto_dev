@@ -68,8 +68,8 @@ class ListingView extends Component {
   render() {
     const content = this.props.content;
     const intl = this.props.intl;
-    const tilesFieldname = getBlocksFieldname(content);
-    const tilesLayoutFieldname = getBlocksLayoutFieldname(content);
+    const blocksFieldname = getBlocksFieldname(content);
+    const blocksLayoutFieldname = getBlocksLayoutFieldname(content);
     const localNavigation =
       (this.props.localNavigation.items &&
         this.props.localNavigation.items.filter(
@@ -83,22 +83,22 @@ class ListingView extends Component {
           {hasBlocksData(content) ? (
             <div id="page-document">
               <Helmet title={content.title} />
-              {map(content[tilesLayoutFieldname].items, tile => {
-                const Tile =
-                  blocks.tilesConfig[
-                    (content[tilesFieldname]?.[tile]?.['@type'])
+              {map(content[blocksLayoutFieldname].items, block => {
+                const Block =
+                  blocks.blocksConfig[
+                    (content[blocksFieldname]?.[block]?.['@type'])
                   ]?.['view'] || null;
-                return Tile !== null ? (
-                  <Tile
-                    key={tile}
-                    id={tile}
+                return Block !== null ? (
+                  <Block
+                    key={block}
+                    id={block}
                     properties={content}
-                    data={content[tilesFieldname][tile]}
+                    data={content[blocksFieldname][block]}
                   />
                 ) : (
-                  <div key={tile}>
+                  <div key={block}>
                     {intl.formatMessage(messages.unknownBlock, {
-                      block: content[tilesFieldname]?.[tile]?.['@type'],
+                      block: content[blocksFieldname]?.[block]?.['@type'],
                     })}
                   </div>
                 );
@@ -154,22 +154,22 @@ class ListingView extends Component {
       pageTemplate = hasBlocksData(content) ? (
         <div id="page-document">
           <Helmet title={content.title} />
-          {map(content[tilesLayoutFieldname].items, tile => {
-            const Tile =
-              blocks.tilesConfig[(content[tilesFieldname]?.[tile]?.['@type'])]?.[
+          {map(content[blocksLayoutFieldname].items, block => {
+            const Block =
+              blocks.blocksConfig[(content[blocksFieldname]?.[block]?.['@type'])]?.[
                 'view'
               ] || null;
-            return Tile !== null ? (
-              <Tile
-                key={tile}
-                id={tile}
+            return Block !== null ? (
+              <Block
+                key={block}
+                id={block}
                 properties={content}
-                data={content[tilesFieldname][tile]}
+                data={content[blocksFieldname][block]}
               />
             ) : (
-              <div key={tile}>
+              <div key={block}>
                 {intl.formatMessage(messages.unknownBlock, {
-                  block: content[tilesFieldname]?.[tile]?.['@type'],
+                  block: content[blocksFieldname]?.[block]?.['@type'],
                 })}
               </div>
             );

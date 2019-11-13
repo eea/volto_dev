@@ -13,23 +13,23 @@ import HiddenWidget from '~/components/manage/Widgets/Hidden';
 import CKEditorWidget from '~/components/manage/Widgets/CKEditor';
 import ChartWidget from '~/components/manage/Widgets/Chart';
 
-import ChartTileEdit from '~/components/manage/Tiles/ChartTile/ChartTileEdit';
-import ChartTileView from '~/components/manage/Tiles/ChartTile/ChartTileView';
+import ChartBlockEdit from '~/components/manage/Blocks/ChartBlock/ChartBlockEdit';
+import ChartBlockView from '~/components/manage/Blocks/ChartBlock/ChartBlockView';
 
-import EuropeCompareTileEdit from '~/components/manage/Tiles/EuropeCompareTile/Edit';
-import EuropeCompareTileView from '~/components/manage/Tiles/EuropeCompareTile/View';
+import EuropeCompareBlockEdit from '~/components/manage/Blocks/EuropeCompareBlock/Edit';
+import EuropeCompareBlockView from '~/components/manage/Blocks/EuropeCompareBlock/View';
 
-import EuropeForestTileEdit from '~/components/manage/Tiles/EuropeForestTile/Edit';
-import EuropeForestTileView from '~/components/manage/Tiles/EuropeForestTile/View';
+import EuropeForestBlockEdit from '~/components/manage/Blocks/EuropeForestBlock/Edit';
+import EuropeForestBlockView from '~/components/manage/Blocks/EuropeForestBlock/View';
 
-import PlotlyTileEdit from '~/components/manage/Tiles/PlotlyChart/Edit';
-import PlotlyTileView from '~/components/manage/Tiles/PlotlyChart/View';
+import PlotlyBlockEdit from '~/components/manage/Blocks/PlotlyChart/Edit';
+import PlotlyBlockView from '~/components/manage/Blocks/PlotlyChart/View';
 
-import TableauTileEdit from '~/components/manage/Tiles/TableauTile/TableauTileEdit';
-import tableauTileView from '~/components/manage/Tiles/TableauTile/TableauTileView';
+import TableauBlockEdit from '~/components/manage/Blocks/TableauBlock/TableauBlockEdit';
+import tableauBlockView from '~/components/manage/Blocks/TableauBlock/TableauBlockView';
 
-import TextTileEdit from '~/components/manage/Tiles/Text/Edit';
-import TextTileView from '~/components/manage/Tiles/Text/View';
+import TextBlockEdit from '~/components/manage/Blocks/Text/Edit';
+import TextBlockView from '~/components/manage/Blocks/Text/View';
 
 import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
 import SliderEditButton from '~/components/manage/Slider/Portlet';
@@ -93,8 +93,8 @@ export const widgets = {
   },
   id: {
     ...defaultWidgets.id,
-    tiles: HiddenWidget,
-    tiles_layout: HiddenWidget,
+    blocks: HiddenWidget,
+    blocks_layout: HiddenWidget,
     visualization: ChartWidget,
   },
   widget: {
@@ -122,7 +122,7 @@ defineMessages({
   },
   forests_specific: {
     id: 'forests_specific',
-    defaultMessage: 'Forests Specific Tiles',
+    defaultMessage: 'Forests Specific Blocks',
   },
 });
 
@@ -134,48 +134,48 @@ export const blocks = {
   groupBlocksOrder: [
     ...defaultBlocks.groupBlocksOrder,
     { id: 'custom_addons', title: 'Custom addons' },
-    { id: 'forests_specific', title: 'Forests Specific Tiles' },
+    { id: 'forests_specific', title: 'Forests Specific Blocks' },
   ],
 
   blocksConfig: {
     ...defaultBlocks.blocksConfig,
-    europe_compare_tile: {
-      id: 'europe_compare_tile',
-      title: 'Europe Compare Tile',
-      view: EuropeCompareTileView,
-      edit: EuropeCompareTileEdit,
+    europe_compare_block: {
+      id: 'europe_compare_block',
+      title: 'Europe Compare Block',
+      view: EuropeCompareBlockView,
+      edit: EuropeCompareBlockEdit,
       icon: chartIcon,
       group: 'forests_specific',
     },
-    europe_forest_tile: {
-      id: 'europe_forest_tile',
-      title: 'Europe Forest Area Tile',
-      view: EuropeForestTileView,
-      edit: EuropeForestTileEdit,
+    europe_forest_block: {
+      id: 'europe_forest_block',
+      title: 'Europe Forest Area Block',
+      view: EuropeForestBlockView,
+      edit: EuropeForestBlockEdit,
       icon: chartIcon,
       group: 'forests_specific',
     },
     embed_chart: {
       id: 'embed_chart',
       title: 'Embed Chart',
-      view: ChartTileView,
-      edit: ChartTileEdit,
+      view: ChartBlockView,
+      edit: ChartBlockEdit,
       icon: chartIcon,
       group: 'custom_addons',
     },
     plotly_chart: {
       id: 'plotly_chart',
       title: 'Plotly Chart',
-      view: PlotlyTileView,
-      edit: PlotlyTileEdit,
+      view: PlotlyBlockView,
+      edit: PlotlyBlockEdit,
       icon: chartIcon,
       group: 'custom_addons',
     },
     tableau: {
       id: 'tableau',
       title: 'Tableau',
-      view: tableauTileView,
-      edit: TableauTileEdit,
+      view: tableauBlockView,
+      edit: TableauBlockEdit,
       icon: chartIcon,
       group: 'custom_addons',
     },
@@ -183,8 +183,8 @@ export const blocks = {
       id: 'cktext',
       group: 'text',
       title: 'CKEditor',
-      view: TextTileView,
-      edit: TextTileEdit,
+      view: TextBlockView,
+      edit: TextBlockEdit,
       icon: defaultBlocks.blocksConfig.text.icon,
     },
   },

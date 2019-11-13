@@ -383,19 +383,19 @@ class CountryPageView extends Component {
         </div>
 
         <div className="country-page-content-wrapper">
-          {map(content[blocksLayoutFieldname].items, tile => {
-            let Tile = null;
-            Tile =
-              blocks.defaultTilesViewMap[content[blocksFieldname][tile]['@type']];
-            return Tile !== null ? (
-              <Tile
-                key={tile}
+          {map(content[blocksLayoutFieldname].items, block => {
+            let Block = null;
+            Block =
+              blocks.defaultBlocksViewMap[content[blocksFieldname][block]['@type']];
+            return Block !== null ? (
+              <Block
+                key={block}
                 properties={content}
-                data={content[blocksFieldname][tile]}
+                data={content[blocksFieldname][block]}
               />
             ) : (
               <div>
-                {JSON.stringify(content[blocksFieldname][tile]['@type'])}
+                {JSON.stringify(content[blocksFieldname][block]['@type'])}
               </div>
             );
           })}
