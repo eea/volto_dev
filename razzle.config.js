@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const jsConfig = require('./jsconfig').compilerOptions;
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer');
 
@@ -23,6 +24,7 @@ module.exports = {
     const vc = razzleModify(config, { target, dev }, webpack);
     // TODO: use find instead of hardcoding the index
     vc.module.rules[0].include.push(resolve('./volto-mosaic'));
+    vc.module.rules[0].include.push(resolve('./volto-blocks'));
 
     const stats = `bundle-stats-${target}`.json;
     const report = `bundle-stats-${target}`.html;
@@ -59,7 +61,8 @@ module.exports = {
     // ];
 
       // "@plone/volto/(.*)$": "<rootDir>/volto/src/$1",
- 
+      const hardSource = new HardSourceWebpackPlugin();
+      vc.plugins.push(hardSource);
     return vc;
   },
 };

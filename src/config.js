@@ -13,23 +13,23 @@ import HiddenWidget from '~/components/manage/Widgets/Hidden';
 import CKEditorWidget from '~/components/manage/Widgets/CKEditor';
 import ChartWidget from '~/components/manage/Widgets/Chart';
 
-import ChartBlockEdit from '~/components/manage/Blocks/ChartBlock/ChartBlockEdit';
-import ChartBlockView from '~/components/manage/Blocks/ChartBlock/ChartBlockView';
+import ChartBlockEdit from '~/../volto-blocks/src/ChartBlock/ChartBlockEdit';
+import ChartBlockView from '~/../volto-blocks/src/ChartBlock/ChartBlockView';
 
-import EuropeCompareBlockEdit from '~/components/manage/Blocks/EuropeCompareBlock/Edit';
-import EuropeCompareBlockView from '~/components/manage/Blocks/EuropeCompareBlock/View';
+import EuropeCompareBlockEdit from '~/../volto-blocks/src/EuropeCompareBlock/Edit';
+import EuropeCompareBlockView from '~/../volto-blocks/src/EuropeCompareBlock/View';
 
-import EuropeForestBlockEdit from '~/components/manage/Blocks/EuropeForestBlock/Edit';
-import EuropeForestBlockView from '~/components/manage/Blocks/EuropeForestBlock/View';
+import EuropeForestBlockEdit from '~/../volto-blocks/src/EuropeForestBlock/Edit';
+import EuropeForestBlockView from '~/../volto-blocks/src/EuropeForestBlock/View';
 
-import PlotlyBlockEdit from '~/components/manage/Blocks/PlotlyChart/Edit';
-import PlotlyBlockView from '~/components/manage/Blocks/PlotlyChart/View';
+import PlotlyBlockEdit from '~/../volto-blocks/src/PlotlyChart/Edit';
+import PlotlyBlockView from '~/../volto-blocks/src/PlotlyChart/View';
 
-import TableauBlockEdit from '~/components/manage/Blocks/TableauBlock/TableauBlockEdit';
-import tableauBlockView from '~/components/manage/Blocks/TableauBlock/TableauBlockView';
+import TableauBlockEdit from '~/../volto-blocks/src/TableauBlock/TableauBlockEdit';
+import tableauBlockView from '~/../volto-blocks/src/TableauBlock/TableauBlockView';
 
-import TextBlockEdit from '~/components/manage/Blocks/Text/Edit';
-import TextBlockView from '~/components/manage/Blocks/Text/View';
+import TextBlockEdit from '~/../volto-blocks/src/Text/Edit';
+// import TextBlockView from '~/../volto-blocks/src/Text/View';
 
 import ForestMetadata from '~/components/theme/Portlets/ForestMetadata';
 import SliderEditButton from '~/components/manage/Slider/Portlet';
@@ -183,7 +183,7 @@ export const blocks = {
       id: 'cktext',
       group: 'text',
       title: 'CKEditor',
-      view: TextBlockView,
+      view: defaultBlocks.blocksConfig.text.view,
       edit: TextBlockEdit,
       icon: defaultBlocks.blocksConfig.text.icon,
     },

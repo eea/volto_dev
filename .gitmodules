@@ -10,3 +10,6 @@
 [submodule "volto"]
 	path = volto
 	url = git@github.com:tiberiuichim/volto.git
+[submodule "volto-blocks"]
+	path = volto-blocks
+	url = git@github.com:eea/volto-blocks.git
